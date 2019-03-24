@@ -12,7 +12,7 @@ def orderDep(files, deps):
     for dep in deps:
         name = dep[0]
         depp = dep[1]
-        for project in projects:
+        for project in projects:  # this is bad
             if project.filename == name:
                 project.add_dependency(depp)
 
@@ -20,21 +20,36 @@ def orderDep(files, deps):
     ordered_projects = []
     first_projects = []
     last_projects = []
-    for proj in projects:
+    # for proj in projects:
 
-        if proj.dependencies == []:
-            first_projects.append(proj)
-        else:
-            # sort by dependencies
-            last_projects.append(proj)
+    #     if proj.dependencies == []:
+    #         first_projects.append(proj)
+    #     else:
+    #         # sort by dependencies
+    #         # last_projects.append(proj)
+    binary_sort(projects)
 
     ordered_projects = first_projects + last_projects
     # binary_search_recur(ordered_projects)
     # return the filenames of the project objects
     return [project.filename for project in ordered_projects]
 
+def split(projects):
+    # Calls itself if len(projects) > 2
+    # else returns projects
+    
 
-def binary_search_recur(items):
+def binary_sort(projects):
+    split_projects = split(projects) # Not necess in order
+    merge()
+
+    for project in projects:
+        # if there are more than 2 projects split the project in half
+        # check temp[0][0] with temp[1][0] for all dependencies
+        # order ^
+        # do this until done
+        
+
     #     if len(arr) > 1:
     #         mid = len(arr) // 2  # Finding the mid of the array
     #         L = arr[:mid]  # Dividing the array elements
