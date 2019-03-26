@@ -2,15 +2,16 @@ import concattwostrings
 
 import pytest
 
-# I am going to break up your tests here. 
+# I am going to break up your tests here.
 # It is good practice to have only one test per function.
 # This is used to calculate test covereage, number of tests,
-# and it can be easier to see why your tests fail as your 
+# and it can be easier to see why your tests fail as your
 # projects get bigger. - Thomas
 
-# The other thing that is useful about writing short tests 
-# is you can copy paste most of the code and just change 
+# The other thing that is useful about writing short tests
+# is you can copy paste most of the code and just change
 # the top test values under "given"
+
 
 def test_concat_two_strings_with_overlap_a_then_b():
     # given
@@ -19,7 +20,7 @@ def test_concat_two_strings_with_overlap_a_then_b():
 
     expected_response = "The quick brown fox."
 
-    # when 
+    # when
     actual_response = concattwostrings.concat(test_string_a, test_string_b)
 
     # then
@@ -33,7 +34,7 @@ def test_concat_two_strings_with_overlap_b_then_a():
 
     expected_response = "The quick brown fox."
 
-    # when 
+    # when
     actual_response = concattwostrings.concat(test_string_a, test_string_b)
 
     # then
@@ -43,6 +44,7 @@ def test_concat_two_strings_with_overlap_b_then_a():
 # Here I wrote tests for the "ambiguous" and "no overlap" cases that
 # expect the function to throw ValueErrors. For this to work, you will
 # need the `pytest` module.
+
 
 def test_check_overlap_ambiguous():
     # given
